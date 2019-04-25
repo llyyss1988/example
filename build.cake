@@ -52,9 +52,8 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    Run("./src/**/bin/" + configuration + "/*.Tests.dll", new VSTestSettings {
-        NoResults = true
-        });
+    
+    NUnit("./src/**/bin/" + configuration + "/*.Tests.dll");
 });
 
 //////////////////////////////////////////////////////////////////////
