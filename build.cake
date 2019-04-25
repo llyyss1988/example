@@ -52,7 +52,7 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    MSTest("./src/**/bin/" + configuration + "/*.Tests.dll", new MSTestSettings {
+    Run("./src/**/bin/" + configuration + "/*.Tests.dll", new VSTestSettings {
         NoResults = true
         });
 });
